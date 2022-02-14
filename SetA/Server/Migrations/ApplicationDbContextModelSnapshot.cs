@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SetA.Server.Data;
 
-namespace SetA.Server.Data.Migrations
+namespace SetA.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220214203443_addeddefaultdataanduser")]
-    partial class addeddefaultdataanduser
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -350,6 +348,9 @@ namespace SetA.Server.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Payment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PaymentMethodId")

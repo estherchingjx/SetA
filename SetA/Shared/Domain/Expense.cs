@@ -10,6 +10,7 @@ namespace SetA.Shared.Domain
     {
         public string Name { get; set; }
         public decimal Amount { get; set; }
+        public string Payment { get; set; }
         public virtual PaymentMethod PaymentMethod { get; set; }
     }
 }
